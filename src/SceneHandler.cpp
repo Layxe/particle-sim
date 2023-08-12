@@ -57,17 +57,10 @@ int SceneHandler::Init()
 
 void SceneHandler::Start()
 {
-    // int framesPerSecond = 0;
-
     const uint32_t particle_memory = sizeof(Particle) * PARTICLE_COUNT;
 
     this->particles = (Particle**) malloc(particle_memory);
     memset(this->particles, 0, sizeof(Particle*) * PARTICLE_COUNT);
-
-    // for (int i = 0; i < PARTICLE_COUNT; i++)
-    // {
-    //     this->particles[i] = (Particle*) 0;
-    // }
 
     SDL_Event event;
 
@@ -104,16 +97,6 @@ void SceneHandler::Start()
 
 void SceneHandler::Update()
 {
-    // static int counter = 0;
-
-    // if (counter % SPAWN_STEPS == 0 && counter < PARTICLE_COUNT * SPAWN_STEPS)
-    // {
-    //     this->particles[counter] =
-    //         new Particle(20, 20, PARTICLE_RADIUS, {255, 255, 255, 255}, (float) ((counter / SPAWN_STEPS) % 10), 0);
-    // }
-
-    // counter++;
-
     for (int j = 0; j < SUB_STEPS; j++)
     {
         for (int i = 0; i < PARTICLE_COUNT; i++)
